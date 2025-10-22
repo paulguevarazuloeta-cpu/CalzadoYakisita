@@ -22,9 +22,7 @@
     <img src="descargar-removebg-preview.png" alt="WhatsApp" style="width: 80px; vertical-align: middle;">
   </a>
   <span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:25px;">ENVIOS A TODO EL PERÚ</span>
-</header>
-
-<style>
+</header><style>
   * {
     margin: 0;
     padding: 0;
@@ -47,11 +45,6 @@
     position: sticky;
     top: 0;
     z-index: 10;
-  }
-
-  header h1 {
-    font-weight: 700;
-    letter-spacing: 2px;
   }
 
   .search-filter {
@@ -89,13 +82,12 @@
     padding: 0;
   }
 
+  /* === GRID PRINCIPAL === */
   .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 0;
-    justify-content: center;
-    align-items: stretch;
-    width: 100%;
+    grid-template-columns: repeat(6, 1fr); /* 6 en PC */
+    gap: 20px;
+    padding: 20px;
   }
 
   .product {
@@ -104,6 +96,8 @@
     position: relative;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    width: 100%;
   }
 
   .product:hover {
@@ -185,14 +179,33 @@
     color: black;
   }
 
+  /* === RESPONSIVE === */
   @media (max-width: 1280px) {
     .products {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-    .product img {
-      height: 720px;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
+
+  @media (max-width: 720px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .product {
+      width: 100%;
+    }
+
+    .product img {
+      height: 180px;
+    }
+
+    .product h3 {
+      font-size: 14px;
+    }
+  }
+</style>
 </style>
 </head>
 <body>
@@ -339,4 +352,5 @@
 </body>
 
 </html>
+
 
